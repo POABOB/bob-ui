@@ -1,0 +1,28 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+ /* 网格组件 */
+.b-grid{
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+}
+/* 网格中的格子 */
+.b-grid > .b-grid-item{
+    position: relative;
+    flex: 1 1 33%;
+    box-sizing: border-box;
+    padding: 1.2rem 0;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+/* 默认是3列 */
+.b-grid .b-grid-item:nth-child(3n){
+    border-right: none;
+}

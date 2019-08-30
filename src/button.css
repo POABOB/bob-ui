@@ -1,0 +1,63 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+ 
+/* 按钮默默認樣式 */
+.b-btn{
+    display: block;
+    position: relative;
+    width: 10rem;
+    margin: 0 auto;
+    padding: .5rem 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: .7rem;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 使其不被選中 */
+    user-select:none;
+}
+
+/* 主按鈕樣式 */
+.b-btn.b-btn-primary{
+    background-color: #1AAD19;
+    color: #fff;
+}
+
+/* 警示按钮樣式 */
+.b-btn.b-btn-warning{
+    background-color: #E64340;
+    color: #fff;
+}
+
+/* 不可用按鈕的樣式 */
+.b-btn.b-btn-disabled{
+    background-color: #F7F7F7;
+    color: #999;
+    opacity: .6;
+}
+
+/* 大按紐 */
+.b-btn.b-btn-large{
+    width: 100%;
+    font-size: .9rem;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+/* 小按紐 */
+.b-btn.b-btn-small{
+    display: inline-block;
+    width: 3rem;
+    padding: .2rem 0;
+    font-size: .7rem;
+}

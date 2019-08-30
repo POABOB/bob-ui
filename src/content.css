@@ -1,0 +1,55 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+/* 内容區 */
+.b-content{
+    /*height: 100%;*/
+    box-sizing: border-box;
+    /* 相對定位 */
+    position: relative;
+    /* 內容超出螢幕高度時，自動顯示滾動條 */
+    overflow-y: auto;
+    /* header高是2.3rem，避免被遮住 */
+    /*padding-top: 2.3rem;*/
+    /* navbar高是2.5rem，避免被遮住 */
+    /*padding-bottom: 2.5rem;*/
+}
+
+/* 兄弟選擇器(影響後方層級的全部元素)，根據header和navbar自動適應內容區高度 */
+.b-header ~ .b-content{
+    padding-top: 2.3rem;
+}
+.b-navbar ~ .b-content{
+    padding-bottom: 2.5rem;
+}
+
+/* 内容分區 -- Panel 面板 */
+/* Panel 標題 */
+.b-content .b-panel-title{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    padding-left: 1rem;
+    color: #aaa;
+    background: #fff;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    font-weight: normal;
+}
+/* Panel 内容區 */
+.b-content .b-panel-body{
+    position: relative;
+    margin-bottom: .6rem;
+    padding: .6rem 1rem;
+    background: #fff;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+/* 可手動設置其是否有內距 */
+.b-content .b-panel-body.no-padding{
+    padding: 0;
+}

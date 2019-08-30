@@ -1,0 +1,54 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+/* 螢幕寬度在340px至410px時的樣式，基準尺寸使用20px */
+/* 樣式2 */ 
+html{
+    height: 100%;
+    font-size: 20px;
+}
+
+/* body默認樣式 */
+body{
+    height: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    /* 超出範圍則隱藏 */
+    overflow-x: hidden;
+    /* iOS上可以讓滾動元素更有彈性，此為webkit內核的瀏覽器才有用 */
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 頁面蒙版 */
+.b-mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 300;
+}
+
+
+/* 螢幕寬度小於340px時的樣式，基準尺寸使用18px */
+@media (max-width: 340px){ 
+/* 樣式1 */ 
+	 html{
+        font-size: 18px;
+    }
+}
+
+
+/* 螢幕寬度大於410px時的樣式，基準尺寸使用22px */
+@media (min-width: 410px){ 
+/* 樣式3 */
+	html{
+        font-size: 22px;
+    }
+}

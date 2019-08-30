@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" href="../src/bob-ui.css">
+        <title>表單元素</title>
+    </head>
+    <body>
+        <div class="b-content">
+            <h1 class="b-panel-title">Panel標題</h1>
+            <div class="b-panel-body">
+                Panel內容
+            </div>
+            <!-- <div class="b-panel-body no-padding">
+                Panel内容(無內距)
+            </div> -->
+            <!-- 基本输入框 -->
+            <h1 class="b-panel-title">基本輸入框:</h1>
+            <div class="b-panel-body no-padding">
+                <div class="b-form-item">
+                    <label class="b-form-label">姓名</label>
+                    <div class="b-form-body">
+                        <input class="b-input" type="text" placeholder="請輸入姓名..." />
+                    </div>
+                </div>
+                <div class="b-form-item">
+                    <label class="b-form-label">密碼</label>
+                    <div class="b-form-body">
+                        <input class="b-input" type="password" placeholder="請輸入密碼..." />
+                    </div>
+                </div>
+                <div class="b-form-item">
+                    <label class="b-form-label">生日</label>
+                    <div class="b-form-body">
+                        <input class="b-input" type="date" placeholder="請選擇日期..." />
+                    </div>
+                </div>
+            </div>
+            <!-- 带清空按钮的输入框 -->
+            <h1 class="b-panel-title">带清空功能的輸入框:</h1>
+            <div class="b-panel-body no-padding">
+                <div class="b-form-item">
+                    <label class="b-form-label">手機號碼</label>
+                    <div class="b-form-body">
+                        <input class="b-input" type="text" placeholder="請輸入手機號碼..." />
+                        <i class="fa fa-close b-input-reset"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 带錯誤提示的輸入框 -->
+            <h1 class="b-panel-title">带錯誤提示的輸入框:</h1>
+            <div class="b-panel-body no-padding">
+                <div class="b-form-item">
+                    <label class="b-form-label">Email</label>
+                    <div class="b-form-body">
+                        <input class="b-input" type="text" placeholder="請輸入Email..." />
+                        <i class="fa fa-exclamation b-input-warning"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 單選 -->
+            <h1 class="b-panel-title">單選:</h1>
+            <div class="b-panel-body no-padding">
+                <div class="b-form-item">
+                    <div class="b-radio">
+                        <i class="fa fa-check b-radio-icon"></i>
+                        <span class="b-radio-desc">你</span>
+                        <input class="b-radio-input" type="radio">
+                    </div>
+                </div>
+                <div class="b-form-item">
+                    <div class="b-radio checked">
+                        <i class="fa fa-check b-radio-icon"></i>
+                        <span class="b-radio-desc">我</span>
+                        <input class="b-radio-input" type="radio">
+                    </div>
+                </div>
+                <div class="b-form-item">
+                    <div class="b-radio">
+                        <i class="fa fa-check b-radio-icon"></i>
+                        <span class="b-radio-desc">他</span>
+                        <input class="b-radio-input" type="radio">
+                    </div>
+                </div>
+            </div>
+            <!-- 多選 -->
+            <h1 class="b-panel-title">多選:</h1>
+            <div class="b-panel-body no-padding">
+                <div class="b-form-item">
+                    <div class="b-check">
+                        <i class="fa fa-check b-check-icon"></i>
+                        <span class="b-check-desc">吃</span>
+                        <input class="b-check-input" type="checkbox">
+                    </div>
+                </div>
+                <div class="b-form-item">
+                    <div class="b-check checked">
+                        <i class="fa fa-check b-check-icon"></i>
+                        <span class="b-check-desc">睡</span>
+                        <input class="b-check-input" type="checkbox">
+                    </div>
+                </div>
+                <div class="b-form-item">
+                    <div class="b-check checked">
+                        <i class="fa fa-check b-check-icon"></i>
+                        <span class="b-check-desc">拉</span>
+                        <input class="b-check-input" type="checkbox">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

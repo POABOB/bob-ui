@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <link rel="stylesheet" href="../src/bob-ui.css">
+        <title>搜尋框樣式設計與開發</title>
+    </head>
+    <body>
+        <div class="b-content">
+            <!-- 帶suggest的搜尋框 -->
+            <div class="b-search">
+                <!-- 搜尋框 -->
+                <form class="b-search-form" action="#">
+                    <div class="b-search-input-wrap">
+                        <i class="fa fa-search b-search-icon"></i>
+                        <input type="text" class="b-search-input" placeholder="搜尋" autocomplete="off" required />
+                        <i class="fa fa-close b-search-clear"></i>
+                    </div>
+                    <span class="b-search-cancel">取消</span>
+                </form>
+                <!-- 搜尋建議 --> 
+                <ul class="b-search-suggest">
+                    <li class="b-suggest-item">手機</li>
+                    <li class="b-suggest-item">iPhone XS Max</li>
+                    <li class="b-suggest-item">華為P30</li>
+                    <li class="b-suggest-item">小米 MIX3</li>
+                    <li class="b-suggest-item">NOKIA 1110</li>
+                </ul>
+            </div>
+            <p class="content">内容區</p>
+            <p class="content">内容區</p>
+            <p class="content">内容區</p>
+            <p class="content">内容區</p>
+            <p class="content">内容區</p>
+        </div>
+        <script>
+            //JS來讓CSS產生動畫
+            window.onload = function(){
+                let bSearch = document.querySelector('.b-search');
+                let bInput = document.querySelector('.b-search-input');
+                // 输入框被选中，进入搜索模式
+                document.querySelector('.b-search-input').addEventListener('focus',function(){
+                    bSearch.classList.add('on-focus');
+                })
+                // 点击取消，返回正常模式
+                document.querySelector('.b-search-cancel').addEventListener('click',function(){
+                    bSearch.classList.remove('on-focus');
+                    bInput.value='';
+                })
+                //點擊X來清除input值
+                document.querySelector('.b-search-clear').addEventListener('click',function(){
+                    bInput.value='';
+                })
+            }
+        </script>
+    </body>
+</html>

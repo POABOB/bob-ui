@@ -1,0 +1,127 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+/* 表單的單行容器 */
+.b-form-item{
+    display: flex;
+    position: relative;
+    padding-left: 1rem;
+    border-bottom: 1px solid #eee;
+}
+/* 去掉最後一行的下邊框 */
+.b-form-item:last-child{
+    border-bottom: none;
+}
+
+/* 表單標籤 */
+.b-form-item > .b-form-label{
+    display: block;
+    width: 3.5rem;
+    font-size: .8rem;
+    color: #666;
+    height: 2rem;
+    line-height: 2rem;
+}
+/* 表單內容區 */
+.b-form-item > .b-form-body{
+    flex: 1;
+}
+/* 輸入框 */
+.b-form-item > .b-form-body > .b-input{
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .8rem;
+    border:none;
+}
+
+/* 表單中清空按鈕 */
+.b-form-item > .b-form-body > .b-input-reset{
+    position: absolute;
+    text-align: center;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    top: 50%;
+    margin-top: -.4rem;
+    right: 1rem;
+    font-size: .6rem;
+    background: #aaa;
+    color: #fff;
+    border-radius: 50%;
+}
+
+/* 表單中錯誤的提示按鈕 */
+.b-form-item > .b-form-body > .b-input-warning{
+    position: absolute;
+    text-align: center;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    top: 50%;
+    margin-top: -.4rem;
+    right: 1rem;
+    font-size: .6rem;
+    border-radius: 50%;
+    color: red;
+    border: 1px solid red;
+}
+
+/* 自定義單選 */
+.b-form-item > .b-radio{
+    flex: 1;
+    font-size: .8rem;
+    line-height: 2rem;
+}
+
+/* 未選中的狀態 */
+.b-form-item > .b-radio > .b-radio-icon{
+    margin-right: .5rem;
+    color: #09BB07;
+    visibility: hidden;
+}
+
+/* 選中的狀態 */
+.b-form-item > .b-radio.checked > .b-radio-icon{
+	/* 控制圖標顯示的是visible，因為她不顯示仍會佔有空間，display:none則不會; */
+    visibility: visible;
+}
+/* 隐藏的radio的input */
+.b-form-item > .b-radio > .b-radio-input{
+    position: absolute;
+    left: -999rem;
+}
+
+/* 自訂義多選 */
+.b-form-item > .b-check{
+    flex: 1;
+    font-size: .8rem;
+    line-height: 2rem;
+}
+/* 未選中的狀態 */
+.b-form-item > .b-check > .b-check-icon{
+    margin-right: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: rgba(0,0,0,0);
+    font-size: .6rem;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+}
+/* 選中的狀態 */
+.b-form-item > .b-check.checked > .b-check-icon{
+	text-align: center;
+    background: #09BB07;
+    color: #fff;
+    border-color: rgba(0,0,0,0)
+}
+/* 隐藏的radio的input */
+.b-form-item > .b-check > .b-check-input{
+    position: absolute;
+    left: -999rem;
+}

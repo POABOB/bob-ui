@@ -1,0 +1,72 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+div{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+ /* 列表裡每一行的橫向容器 */
+.b-list > .b-list-item{
+	display: flex;
+    position: relative;
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    background: #fff;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+/* 列表的圖片容器 */
+.b-list .item-img-wrap{
+    flex: 0 0 5rem;
+    height: 5rem;
+    margin-right: .5rem;
+    border-radius: .2rem;
+    overflow: hidden;
+}
+/* 列表的圖片 */
+.b-list .item-img-wrap > .item-img{
+    width: 100%;
+    height: 100%;
+}
+
+/* 列表的文字區域 */
+.b-list .item-content-wrap{
+    position: relative;
+    /* 占滿左右空白 */
+    flex: 1;
+    display: flex;
+    /* 方向左右 */
+    flex-direction: column;
+    /* 空白空間平均分配 */
+    justify-content: space-between;
+}
+
+/* 列表的標題 */
+.b-list .item-content-wrap > .item-title{
+    height: 2rem;
+    line-height: 1rem;
+    font-size: .8rem;
+    font-weight: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 列表的加个字串 */
+.b-list .item-content-wrap > .item-price{
+    font-size: .8rem;
+    font-weight: 600;
+    color: #e0652f;
+}
+/* 列表的描述 */
+.b-list .item-content-wrap > .item-desc{    
+    color: #999;
+    font-size: .6rem;
+}

@@ -1,0 +1,48 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+/* 頭部導航欄 */
+.b-header{
+	display: flex;
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 640px;
+    height: 2.3rem;
+    /* 字體範圍高度，使字體行高適中 */
+    line-height: 2.3rem;
+    text-align: center;
+    top: 0;
+    z-index: 200;
+    border-bottom: 1px solid #ddd;
+    background: #f8f8f8;
+}
+
+/* header左側 */
+.b-header > .left{
+	/* flex-box的width */
+    flex-basis: 3rem;
+    text-align: center;
+    /* 0不參與壓縮 */
+    flex-shrink: 0;
+}
+/* header標題 */
+.b-header > .title{
+	/* 1參與拉伸 */
+    flex-grow: 1;
+    /* 以下三種屬性可以省略過長的字句為一行 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* header右側 */
+.b-header > .right{
+	/* flex-box的width */
+    flex-basis: 3rem;
+    /* 0不參與壓縮 */
+    flex-shrink: 0;
+}
