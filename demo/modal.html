@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../src/bob-ui.css">
+        <title>模態框設計與開發</title>
+    </head>
+    <body>
+        <div class="b-header">
+            <div class="left"><i class="fa fa-chevron-left"></i></div>
+            <div class="title">模態框</div>
+            <div class="right"><i class="fa fa-ellipsis-h"></i></div>
+        </div>
+        <div class="b-navbar">
+            <a class="navbar-item">
+                <i class="fa fa-home icon"></i>
+                <span class="name">首頁</span>
+            </a>
+            <a class="navbar-item active">
+                <i class="fa fa-list icon"></i>
+                <span class="name">分類</span>
+            </a>
+            <a class="navbar-item">
+                <i class="fa fa-search icon"></i>
+                <span class="name">發現</span>
+            </a>
+            <a class="navbar-item">
+                <i class="fa fa-user-o icon"></i>
+                <span class="name">我的</span>
+            </a>
+        </div>
+        <div class="b-content">
+            <p>内容區</p>
+        </div>
+        <!-- 模态框 -->
+        <div class="b-modal">
+            <!-- ... -->
+            <div class="b-mask"></div>
+            <div class="b-modal-wrap">
+                <div class="b-modal-body">
+                    <p>你好啊</p>
+                </div>
+                <div class="b-modal-footer">
+                    <a class="b-btn">你好</a>
+                    <a class="b-btn">我不好</a>
+                </div>
+            </div>
+        </div>
+        <div class="b-modal">
+            <div class="b-mask"></div>
+            <div class="b-modal-wrap">
+                <div class="b-modal-body no-padding">
+                    <img class="b-modal-img" src="../img/123.jpg" alt="">
+                </div>
+                <i class="fa fa-close b-modal-close"></i>
+            </div>
+        </div>
+    </body>
+</html>

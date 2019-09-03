@@ -1,28 +1,78 @@
 /*
  * @Author: 耿映翔
- * @Date: 2019-08-18 23:02:40 
+ * @Date: 2019-09-01 23:02:40 
  * @Last Modified by: 耿映翔
  * @Last Modified time: 2019-08-19 13:37:40
  */
 
- /* 网格组件 */
+ /* 網格组件 */
 .b-grid{
     display: flex;
+    /* 彈性布局 */
     flex-wrap: wrap;
     border-top: 1px solid #ddd;
 }
 /* 网格中的格子 */
 .b-grid > .b-grid-item{
     position: relative;
+    /* 每個佔1/3 */
     flex: 1 1 33%;
     box-sizing: border-box;
+    /* 撐開成格子 */
     padding: 1.2rem 0;
     text-align: center;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
     background: #fff;
 }
-/* 默认是3列 */
+/* 第三列取消右邊框 */
 .b-grid .b-grid-item:nth-child(3n){
+    border-right: none;
+}
+/* grid内容區 */
+.b-grid > .b-grid-item > .b-grid-icon{
+    font-size: 1.5rem;
+    color: #aaa;
+    margin-bottom: .5rem;
+}
+.b-grid > .b-grid-item > .b-grid-label{
+    font-size: .6rem;
+    color: #333;
+}
+/* 不需要边框时取消容器上的border */
+.b-grid.no-border{
+    border: none;
+}
+/* 不需要边框时取消格子上所以的border */
+.b-grid.no-border > .b-grid-item{
+     border: none !important;
+}
+
+/* 特定列 */
+/* 2 */
+.b-grid.b-grid-2 .b-grid-item{
+    border-right: 1px solid #ddd;
+    flex-basis: 50%;
+    padding: 1.8rem 0;
+}
+.b-grid.b-grid-2 .b-grid-item:nth-child(2n){
+    border-right: none;
+}
+/* 4 */
+.b-grid.b-grid-4 .b-grid-item{
+    border-right: 1px solid #ddd;
+    flex-basis: 25%;
+    padding: .9rem 0;
+}
+.b-grid.b-grid-4 .b-grid-item:nth-child(4n){
+    border-right: none;
+}
+/* 5 */
+.b-grid.b-grid-5 .b-grid-item{
+    border-right: 1px solid #ddd;
+    flex-basis: 20%;
+    padding: .6rem 0;
+}
+.b-grid.b-grid-5 .b-grid-item:nth-child(5n){
     border-right: none;
 }

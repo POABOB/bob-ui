@@ -1,0 +1,83 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+/* 菜單 */
+.b-menu > .b-menu-item{
+    display: flex;
+    height: 2.3rem;
+    padding: 0 1rem;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    font-size: .8rem;
+}
+.b-menu > .b-menu-item.point{
+    cursor: pointer;
+}
+/* 名稱 */
+.b-menu > .b-menu-item > .b-menu-name{
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+}
+/* 訊息 */
+.b-menu > .b-menu-item > .b-menu-value{
+    max-width: 5rem;
+    height: 1rem;
+    line-height: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+}
+/* ICON */
+.b-menu > .b-menu-item > .b-menu-icon{
+    margin-left: .3rem;
+    color: #999;
+
+}
+
+/* 開關 */
+.b-menu > .b-menu-item > .b-switch{
+    position: relative;
+    box-sizing: content-box;
+    width: 2.6rem;
+    height: 1.4rem;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: .75rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color .3s, border .3s;
+    /* 去掉webkit内核里默认的样式 */
+    -webkit-appearance: none;
+    /* 去掉webkit内核里默认的点击效果 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+/* 選中改變顏色 */
+.b-menu > .b-menu-item > .b-switch:checked{
+    border-color: #07C160;
+    background-color: #07C160;
+}
+/* 使用::after偽元素實現圖形按鈕樣式 */
+.b-menu > .b-menu-item > .b-switch::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: .7rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 2px #999;
+    transition: left .3s;
+}
+/* 更改按鈕的位置 */
+.b-menu > .b-menu-item > .b-switch:checked::after{
+    left: 1.2rem;
+}

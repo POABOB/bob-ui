@@ -1,0 +1,82 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+ /* 模態框 */
+.b-modal{
+    display: none;
+}
+/* 控制模態框的顯示 */
+.b-modal.show{
+    display: block;
+}
+/* 模態框窗口容器 */
+.b-modal .b-modal-wrap{
+    position: absolute;
+    width: 60%;
+    max-width: 480px;
+    top: 45%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    border-radius: .4rem;
+    z-index: 301;
+}
+/* 模態框内容區 */
+.b-modal .b-modal-body{
+    padding: 1.8rem .8rem 1.5rem;
+    text-align: center;
+    font-size: .8rem;
+    line-height: 1.2rem;
+    overflow: hidden;
+}
+/* 模態框尾部 */
+.b-modal .b-modal-footer{
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+/* 模態框尾部里按鈕的样式 */
+.b-modal .b-modal-footer .b-btn{
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    font-size: .8rem;
+    cursor: pointer;
+}
+/* 模態框尾部中的按鈕加上分隔 */
+.b-modal .b-modal-footer .b-btn + .b-btn{
+    border-left: 1px solid #ddd;
+}
+
+/* 控制模態框内容區的内邊距 */
+.b-modal .b-modal-body.no-padding{
+    padding: 0;
+}
+/* 圖片形式的模態框樣式 */
+.b-modal .b-modal-body .b-modal-img{
+    display: block;
+    width: 100%;
+    border-radius: .3rem;
+}
+/* 純圖片模態框里的關閉按鈕 */
+.b-modal .b-modal-close{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1.3rem;
+    line-height: 1.3rem;
+    margin: auto;
+    bottom: -3rem;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 100;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    cursor: pointer;
+}

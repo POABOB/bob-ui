@@ -24,6 +24,7 @@
     text-overflow: ellipsis;
     /* 使其不被選中 */
     user-select:none;
+    cursor: pointer;
 }
 
 /* 主按鈕樣式 */

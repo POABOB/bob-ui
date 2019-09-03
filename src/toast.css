@@ -1,0 +1,39 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+/* Toast提示工具 */
+.b-toast{
+    position: fixed;
+    width: 7rem;
+    top: 45%;
+    transform: translateY(-40%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 1rem 0;
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, .6);
+    border-radius: .4rem;
+    transition: transform .3s, opacity .3s;
+    z-index: 301;
+}
+/* 顯示Toast組件 */
+.b-toast.show{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+/* Toast組件中的圖標 */
+.b-toast > .b-toast-icon{
+    font-size: 2.2rem;
+}
+/* Toast組件中的文本部分 */
+.b-toast > .b-toast-info{
+    margin-top: .5rem;
+    font-size: .7rem;
+}

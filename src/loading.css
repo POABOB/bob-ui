@@ -1,0 +1,68 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+ /* 頁面加載提示组件 */
+.b-loading{
+    padding: 1rem 0;
+    text-align: center;
+}
+/* 頁面加載提示组件的圖標 */
+.b-loading > .b-loading-icon{
+    font-size: 4.5rem;
+    color: rgba(0, 0, 0, .05);
+}
+/* 頁面加載提示组件的提示信息 */
+.b-loading > .b-loading-info{
+    display: block;
+    margin-top: .6rem;
+    font-size: .8rem;
+    color: #ccc;
+}
+/* 單行加載提示组件 */
+.b-loading-inline{
+    margin: 1.5rem auto 1rem;
+    width: 12.5rem;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    color: #999;
+    height: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+/* 單行加載提示组件的文本信息 */
+.b-loading-inline > .b-loading-info{
+    display: inline-block;
+    padding: 0 .7rem;
+    position: relative;
+    top: -.7rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .7rem;
+    background: #fff;
+}
+/* 單行加載提示组件的圖標 */
+.b-loading-inline > .b-loading-info > .b-loading-icon{
+	padding: 0 .2rem;
+    color: rgba(0, 0, 0, .2);
+}
+
+/* 垂直方向上震動 */
+.fa-vibrate-y{
+    animation: fa-vibrate-y 1.5s infinite ease-in;
+}
+/* 震動軌跡 */
+@keyframes fa-vibrate-y{
+    0% {
+        transform: translateY(-10%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}

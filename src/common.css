@@ -15,7 +15,7 @@ html{
 /* body默認樣式 */
 body{
     height: 100%;
-    max-width: 640px;
+    max-width: 1024px;
     margin: 0 auto;
     background: #f8f8f8;
     /* 超出範圍則隱藏 */
@@ -47,8 +47,24 @@ body{
 
 /* 螢幕寬度大於410px時的樣式，基準尺寸使用22px */
 @media (min-width: 410px){ 
-/* 樣式3 */
+/* 樣式2 */
 	html{
         font-size: 22px;
+    }
+}
+
+/* 螢幕寬度大於768px時的樣式，基準尺寸使用26px */
+@media (min-width: 768px){ 
+/* 樣式3 */
+    html{
+        font-size: 26px;
+    }
+}
+
+/* 螢幕寬度大於1024px時的樣式，基準尺寸使用26px */
+@media (min-width: 1024px){ 
+/* 樣式3 */
+    html{
+        font-size: 30px;
     }
 }

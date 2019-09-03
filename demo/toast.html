@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../src/bob-ui.css">
+        <title>Toast提示组件設計與開發</title>
+    </head>
+    <body>
+        <div class="b-content">
+            <h1 class="b-panel-title">Toast提示组件</h1>
+            <div class="b-panel-body">
+                <a class="b-btn btn-primary" id="js-show-toast-loading">加載中提示</a>
+                <br>
+                <a class="b-btn btn-primary" id="js-show-toast-success">成功提示</a>
+            </div>
+        </div>
+        <div class="b-toast" id="js-toast-loading">
+            <i class="fa fa-spinner fa-spin b-toast-icon"></i>
+            <p class="b-toast-info">操作進行中</p>
+        </div>
+        <div class="b-toast" id="js-toast-success">
+            <i class="fa fa-check b-toast-icon"></i>
+            <p class="b-toast-info">操作成功</p>
+        </div>
+        <script>
+        window.onload = ()=>{
+                // 显示加载中的Toast
+                document.querySelector('#js-show-toast-loading').onclick = (e) => {
+                    let toastEle = document.querySelector('#js-toast-loading');
+                    toastEle.classList.add('show');
+                    setTimeout(()=> {
+                        toastEle.classList.remove('show');
+                    }, 2e3);
+                };
+                // 显示操作成功的Toast
+                document.querySelector('#js-show-toast-success').onclick = (e) => {
+                    let toastEle = document.querySelector('#js-toast-success');
+                    toastEle.classList.add('show');
+                    setTimeout(()=> {
+                        toastEle.classList.remove('show');
+                    }, 2e3);
+                };
+            };
+    </script>
+    </body>
+
+</html>

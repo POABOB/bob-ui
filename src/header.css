@@ -11,7 +11,7 @@
     position: fixed;
     box-sizing: border-box;
     width: 100%;
-    max-width: 640px;
+    max-width: 1024px;
     height: 2.3rem;
     /* 字體範圍高度，使字體行高適中 */
     line-height: 2.3rem;

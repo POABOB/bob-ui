@@ -1,0 +1,83 @@
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+
+ /* 彈出菜單容器，默認隐藏在螢幕的下面 */
+.b-action-sheet > .b-action-sheet-wrap{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 1024px;
+    margin: auto;
+    background: #eee;
+    transition: transform .3s ease;
+    transform: translateY(100%);
+    z-index: 301;
+}
+/* 菜單彈出的时候，改變容器位移 */
+.b-action-sheet.show .b-action-sheet-wrap{
+    transform: translateY(0);
+}
+/* 默認隐藏蒙版 */
+.b-action-sheet > .b-mask{
+    opacity: 0;
+    /* 屏蔽元素的點擊事件 */
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+/* 菜單彈出的时候顯示蒙版 */
+.b-action-sheet.show > .b-mask{
+    opacity: 1;
+    pointer-events: auto;
+}
+/* 彈出菜單頭部 */
+.b-action-sheet .b-action-sheet-header{
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 3rem;
+    background: #fff;
+}
+/* 頭部標題，用來描述菜單作用 */
+.b-action-sheet .b-action-sheet-header > .b-action-sheet-title{
+    flex: 1;
+    font-size: .7rem;
+    line-height: 1rem;
+    font-weight: normal;
+    color: rgba(0, 0, 0, .3);
+    overflow: hidden;
+    display: -webkit-box;
+    /* 超過2良自動截斷 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/* 中間主要内容區 */
+.b-action-sheet .b-action-sheet-body{
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    background: #fff;
+}
+/* 菜單尾部，通常用來 放取消按鈕 */
+.b-action-sheet .b-action-sheet-footer{
+    margin-top: .3rem;
+    background: #fff;
+}
+/* 每个菜單項 */
+.b-action-sheet .b-action-sheet-menu{
+    display: block;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    font-size: .8rem;
+    text-align: center;
+    cursor: pointer;
+}
+/* 菜單項的邊框控制 */
+.b-action-sheet .b-action-sheet-menu + .b-action-sheet-menu{
+    /*display: block;*/
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}

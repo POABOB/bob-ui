@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../src/bob-ui.css">
+        <title>Loading加載提醒組件設計與開發</title>
+    </head>
+    <body>
+        <div class="b-content">
+            <!-- 页面加载提示组件 -->
+            <h1 class="b-panel-title">頁面加載提醒組件</h1>
+            <div class="b-panel-body">
+                <div class="b-loading">
+                    <i class="fa fa-circle-o-notch fa-spin b-loading-icon"></i>
+                    <span class="b-loading-info">載入中...</span>
+                </div>
+                <div class="b-loading">
+                    <i class="fa fa-refresh b-loading-icon"></i>
+                    <span class="b-loading-info">載入失敗，點我重新載入</span>
+                </div>
+            </div>
+            <!-- 单行加载提示组件 -->
+            <h1 class="b-panel-title">單行加載提醒組件</h1>
+            <div class="b-panel-body">
+                <!-- ... -->
+                <div class="b-loading-inline">
+                    <span class="b-loading-info">
+                     <i class="fa fa-circle-o-notch fa-spin b-loading-icon"></i>載入中</span>
+                </div>
+                <div class="b-loading-inline">
+                    <span class="b-loading-info">
+                        上拉加載更多
+                        <i class="fa fa-long-arrow-up fa-vibrate-y b-loading-icon"></i>
+                    </span>
+                </div>
+                <div class="b-loading-inline">
+                    <span class="b-loading-info">
+                        我可是有底線的
+                    </span>
+                </div>
+                <div class="b-loading-inline">
+                    <span class="b-loading-info">
+                        ·
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

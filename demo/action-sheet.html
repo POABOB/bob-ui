@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../src/bob-ui.css">
+        <title>ActionSheet彈出式菜單設計與開發</title>
+    </head>
+    <body>
+        <div class="b-content">
+            <h1 class="b-panel-title">ActionSheet彈出式菜單</h1>
+            <div class="b-panel-body">
+                <a class="b-btn" id="js-show">顯示彈出式菜單</a>
+            </div>
+        </div>
+        <div class="b-action-sheet">
+            <div class="b-mask"></div>
+            <div class="b-action-sheet-wrap">
+                <div class="b-action-sheet-header">
+                    <h1 class="b-action-sheet-title">你需要做什麼操作？</h1>
+                </div>
+                <div class="b-action-sheet-body">
+                    <a class="b-action-sheet-menu" href="www.google.com">收藏</a>
+                    <a class="b-action-sheet-menu">關注</a>
+                    <a class="b-action-sheet-menu">分享给好友</a>
+                </div>
+                <div class="b-action-sheet-footer">
+                    <a class="b-action-sheet-menu" id="js-close">取消</a>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.onload = ()=>{
+                // 彈出
+                document.querySelector('#js-show').onclick = (e) => {
+                    document.querySelector('.b-action-sheet').classList.add('show');
+                }
+                // 收回
+                document.querySelector('#js-close').onclick = (e) => {
+                    document.querySelector('.b-action-sheet').classList.remove('show');
+                }
+                document.querySelector('.b-action-sheet').onclick = (e) => {
+                    document.querySelector('.b-action-sheet').classList.remove('show');
+                }
+            };
+        </script>
+    </body>
+</html>
