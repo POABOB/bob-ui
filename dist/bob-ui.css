@@ -1,0 +1,1139 @@
+
+@import 'https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css';
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* css reset */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-17 15:57:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-18 13:37:40
+ */
+/* 去掉所有元素的内外邊距 */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, img,  ul, li, form, label, input,
+table, tbody, tfoot, thead, tr, th, td,
+audio, video {
+	margin: 0;
+	padding: 0;
+}
+/* 統一全局字體 */
+body {
+	font-family: -apple-system-font,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei",Arial,sans-serif
+}
+/* 列表元素去掉默認的列表樣式 */
+ol, ul {
+	list-style: none;
+}
+/* Table元素的邊框摺疊 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 去掉默認的底線 */
+a{
+	text-decoration: none;
+}
+/* 去掉input自带的邊緣效果和背景顏色 */
+input{
+	outline: none;
+	background: none;
+}
+/* 公用樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 螢幕寬度在340px至410px時的樣式，基準尺寸使用20px */
+/* 樣式2 */
+html{
+    height: 100%;
+    font-size: 20px;
+}
+/* body默認樣式 */
+body{
+    height: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    /* 超出範圍則隱藏 */
+    overflow-x: hidden;
+    /* iOS上可以讓滾動元素更有彈性，此為webkit內核的瀏覽器才有用 */
+    -webkit-overflow-scrolling: touch;
+}
+/* 頁面蒙版 */
+.b-mask{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 300;
+}
+/* 螢幕寬度小於340px時的樣式，基準尺寸使用18px */
+@media (max-width: 340px){ 
+/* 樣式1 */ 
+	 html{
+        font-size: 18px;
+    }
+}
+/* 螢幕寬度大於410px時的樣式，基準尺寸使用22px */
+@media (min-width: 410px){ 
+/* 樣式2 */
+	html{
+        font-size: 22px;
+    }
+}
+/* 螢幕寬度大於768px時的樣式，基準尺寸使用26px */
+@media (min-width: 768px){ 
+/* 樣式3 */
+    html{
+        font-size: 26px;
+    }
+}
+/* 螢幕寬度大於1024px時的樣式，基準尺寸使用26px */
+@media (min-width: 1024px){ 
+/* 樣式3 */
+    html{
+        font-size: 30px;
+    }
+}
+/* 字體圖標 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 字體圖標，引用font-awesome */
+/* 標題欄樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 頭部導航欄 */
+.b-header{
+	display: flex;
+    position: fixed;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 1024px;
+    height: 2.3rem;
+    /* 字體範圍高度，使字體行高適中 */
+    line-height: 2.3rem;
+    text-align: center;
+    top: 0;
+    z-index: 200;
+    border-bottom: 1px solid #ddd;
+    background: #f8f8f8;
+}
+/* header左側 */
+.b-header > .left{
+	/* flex-box的width */
+    flex-basis: 3rem;
+    text-align: center;
+    /* 0不參與壓縮 */
+    flex-shrink: 0;
+}
+/* header標題 */
+.b-header > .title{
+	/* 1參與拉伸 */
+    flex-grow: 1;
+    /* 以下三種屬性可以省略過長的字句為一行 */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* header右側 */
+.b-header > .right{
+	/* flex-box的width */
+    flex-basis: 3rem;
+    /* 0不參與壓縮 */
+    flex-shrink: 0;
+}
+/* 內容區樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 内容區 */
+.b-content{
+    height: 100%;
+    box-sizing: border-box;
+    /* 相對定位 */
+    position: relative;
+    /* 內容超出螢幕高度時，自動顯示滾動條 */
+    overflow-y: auto;
+    /* header高是2.3rem，避免被遮住 */
+    /*padding-top: 2.3rem;*/
+    /* navbar高是2.5rem，避免被遮住 */
+    /*padding-bottom: 2.5rem;*/
+}
+/* 兄弟選擇器(影響後方層級的全部元素)，根據header和navbar自動適應內容區高度 */
+.b-header ~ .b-content{
+    padding-top: 2.3rem;
+}
+.b-navbar ~ .b-content{
+    padding-bottom: 2.5rem;
+}
+/* 内容分區 -- Panel 面板 */
+/* Panel 標題 */
+.b-content .b-panel-title{
+    height: 1.8rem;
+    line-height: 1.8rem;
+    padding-left: 1rem;
+    color: #aaa;
+    background: #fff;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    font-weight: normal;
+}
+/* Panel 内容區 */
+.b-content .b-panel-body{
+    position: relative;
+    margin-bottom: .6rem;
+    padding: .6rem 1rem;
+    background: #fff;
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+/* 可手動設置其是否有內距 */
+.b-content .b-panel-body.no-padding{
+    padding: 0;
+}
+/* 導航欄樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 底部導航欄 */
+.b-navbar{
+	display: flex;
+    position: fixed;
+    box-sizing: border-box;
+    bottom: 0;
+    width: 100%;
+    max-width: 1024px;
+    height: 2.5rem;
+    border-top: 1px solid #ddd;
+    z-index: 200;
+    background: #f8f8f8;
+    text-align: center;
+}
+/* 導覽項目 */
+.b-navbar > .navbar-item{
+	/* 每個比重為1 */
+    flex: 1;
+    color: #808080;
+}
+/* 選中效果 */
+.b-navbar > .navbar-item.active{
+    color: #09BB07;
+}
+/* 導覽圖標 */
+.b-navbar > .navbar-item > .icon{
+    padding: .3rem 0 .1rem;
+    font-size: 1.1rem;
+}
+/* 導覽名稱 */
+.b-navbar > .navbar-item > .name{
+    display: block;
+    font-size: .5rem;
+}
+/* 表單樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 表單的單行容器 */
+.b-form-item{
+    display: flex;
+    position: relative;
+    padding-left: 1rem;
+    border-bottom: 1px solid #eee;
+}
+/* 去掉最後一行的下邊框 */
+.b-form-item:last-child{
+    border-bottom: none;
+}
+/* 表單標籤 */
+.b-form-item > .b-form-label{
+    display: block;
+    width: 3.5rem;
+    font-size: .8rem;
+    color: #666;
+    height: 2rem;
+    line-height: 2rem;
+}
+/* 表單內容區 */
+.b-form-item > .b-form-body{
+    flex: 1;
+}
+/* 輸入框 */
+.b-form-item > .b-form-body > .b-input{
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .8rem;
+    border:none;
+}
+/* 表單中清空按鈕 */
+.b-form-item > .b-form-body > .b-input-reset{
+    position: absolute;
+    text-align: center;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    top: 50%;
+    margin-top: -.4rem;
+    right: 1rem;
+    font-size: .6rem;
+    background: #aaa;
+    color: #fff;
+    border-radius: 50%;
+}
+/* 表單中錯誤的提示按鈕 */
+.b-form-item > .b-form-body > .b-input-warning{
+    position: absolute;
+    text-align: center;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    top: 50%;
+    margin-top: -.4rem;
+    right: 1rem;
+    font-size: .6rem;
+    border-radius: 50%;
+    color: red;
+    border: 1px solid red;
+}
+/* 自定義單選 */
+.b-form-item > .b-radio{
+    flex: 1;
+    font-size: .8rem;
+    line-height: 2rem;
+}
+/* 未選中的狀態 */
+.b-form-item > .b-radio > .b-radio-icon{
+    margin-right: .5rem;
+    color: #09BB07;
+    visibility: hidden;
+}
+/* 選中的狀態 */
+.b-form-item > .b-radio.checked > .b-radio-icon{
+	/* 控制圖標顯示的是visible，因為她不顯示仍會佔有空間，display:none則不會; */
+    visibility: visible;
+}
+/* 隐藏的radio的input */
+.b-form-item > .b-radio > .b-radio-input{
+    position: absolute;
+    left: -999rem;
+}
+/* 自訂義多選 */
+.b-form-item > .b-check{
+    flex: 1;
+    font-size: .8rem;
+    line-height: 2rem;
+}
+/* 未選中的狀態 */
+.b-form-item > .b-check > .b-check-icon{
+    margin-right: .5rem;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: rgba(0,0,0,0);
+    font-size: .6rem;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+}
+/* 選中的狀態 */
+.b-form-item > .b-check.checked > .b-check-icon{
+	text-align: center;
+    background: #09BB07;
+    color: #fff;
+    border-color: rgba(0,0,0,0)
+}
+/* 隐藏的radio的input */
+.b-form-item > .b-check > .b-check-input{
+    position: absolute;
+    left: -999rem;
+}
+/* 按鈕的樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 按钮默默認樣式 */
+.b-btn{
+    display: block;
+    position: relative;
+    width: 10rem;
+    margin: 0 auto;
+    padding: .5rem 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-size: .7rem;
+    text-align: center;
+    color: #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 使其不被選中 */
+    -webkit-user-select:none;
+       -moz-user-select:none;
+        -ms-user-select:none;
+            user-select:none;
+    cursor: pointer;
+}
+/* 主按鈕樣式 */
+.b-btn.b-btn-primary{
+    background-color: #1AAD19;
+    color: #fff;
+}
+/* 警示按钮樣式 */
+.b-btn.b-btn-warning{
+    background-color: #E64340;
+    color: #fff;
+}
+/* 不可用按鈕的樣式 */
+.b-btn.b-btn-disabled{
+    background-color: #F7F7F7;
+    color: #999;
+    opacity: .6;
+}
+/* 大按紐 */
+.b-btn.b-btn-large{
+    width: 100%;
+    font-size: .9rem;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+/* 小按紐 */
+.b-btn.b-btn-small{
+    display: inline-block;
+    width: 3rem;
+    padding: .2rem 0;
+    font-size: .7rem;
+}
+/* 搜尋欄的樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 搜尋框 */
+.b-search{
+    max-width: 1024px;
+    margin: 0 auto;
+    background: #f8f8f8;
+}
+/* 搜尋狀態中，覆蓋內容區 */
+.b-search.on-focus{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+/* 處理有標題欄得情況 */
+.b-header ~ .b-content .b-search.on-focus{
+    top: 2.3rem;
+}
+/* 處理有導航欄得情況 */
+.b-navbar ~ .b-content .b-search.on-focus{
+    bottom: 2.5rem;
+}
+/* 搜尋欄中的表單 */
+.b-search > .b-search-form{
+	/* 在search內讓icon和canccel擠壓著 */
+    display: flex;
+    height: 2.3rem;
+    /* 讓她固定在中間 */
+    align-items:center;
+}
+/* 輸入框的容器 */
+.b-search > .b-search-form > .b-search-input-wrap{
+	/*  Flex-Grow為1 */
+    flex: 1;
+    position: relative;
+    padding: 0 .5rem;
+}
+/* 取消按鈕 */
+.b-search > .b-search-form > .b-search-cancel{
+	/*  Flex-Grow為0 Flex-Shrink為0 Flex-Basis為2.2rem */
+    flex: 0 0 2.2rem;
+    padding-right: .5rem;
+    text-align: center;
+    font-size: .7rem;
+    display: none;
+}
+/* 對取消按钮的控制 */
+.b-search.on-focus > .b-search-form > .b-search-cancel{
+    display: block;
+    /* 讓取消的區塊可以有手指頭點 */
+    cursor: pointer;
+}
+/* 搜尋圖標 */
+.b-search .b-search-icon{
+    position: absolute;
+    height: .8rem;
+    line-height: .8rem;
+    font-size: .7rem;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    color: #ccc;
+}
+/* 輸入框的樣式 */
+.b-search .b-search-input{
+    box-sizing: border-box;
+    width: 100%;
+    height: 1.6rem;
+    border: none;
+    font-size: .8rem;
+    padding-left: 1.5rem;
+    /* 讓input的值不會被x遮住 */
+    padding-right: 1.5rem;
+    background: #fff;
+    border-radius: .2rem;
+}
+/* 清空按鈕的樣式 */
+.b-search .b-search-clear{
+    position: absolute;
+    /* 一定要讓icon置中 */
+    text-align: center;
+    height: .8rem;
+    line-height: .8rem;
+    width: .8rem;
+    font-size: .6rem;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: 1rem;
+    border-radius: 50%;
+    color: #fff;
+    background: #ccc;
+    display: none;
+    cursor: pointer;
+}
+/* 對清空按鈕的控制 */
+.b-search.on-focus .b-search-input:valid + .b-search-clear{
+    display: block;
+}
+/* 搜尋建議 */
+.b-search > .b-search-suggest{
+    display: none;
+}
+.b-search.on-focus > .b-search-suggest{
+    display: block;
+}
+/* 搜尋建議的内容 */
+.b-search > .b-search-suggest > .b-suggest-item{
+    padding-left: 1rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: .8rem;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+/* 列表的樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-08-18 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+div{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 列表裡每一行的橫向容器 */
+.b-list > .b-list-item{
+	display: flex;
+    position: relative;
+    padding: .5rem 1rem;
+    font-size: .8rem;
+    background: #fff;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+/* 列表的圖片容器 */
+.b-list .item-img-wrap{
+    flex: 0 0 5rem;
+    height: 5rem;
+    margin-right: .5rem;
+    border-radius: .2rem;
+    overflow: hidden;
+}
+/* 列表的圖片 */
+.b-list .item-img-wrap > .item-img{
+    width: 100%;
+    height: 100%;
+}
+/* 列表的文字區域 */
+.b-list .item-content-wrap{
+    position: relative;
+    /* 占滿左右空白 */
+    flex: 1;
+    display: flex;
+    /* 方向左右 */
+    flex-direction: column;
+    /* 空白空間平均分配 */
+    justify-content: space-between;
+}
+/* 列表的標題 */
+.b-list .item-content-wrap > .item-title{
+    height: 2rem;
+    line-height: 1rem;
+    font-size: .8rem;
+    font-weight: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 列表的加个字串 */
+.b-list .item-content-wrap > .item-price{
+    font-size: .8rem;
+    font-weight: 600;
+    color: #e0652f;
+}
+/* 列表的描述 */
+.b-list .item-content-wrap > .item-desc{    
+    color: #999;
+    font-size: .6rem;
+}
+/* 網格組件的樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 網格组件 */
+.b-grid{
+    display: flex;
+    /* 彈性布局 */
+    flex-wrap: wrap;
+    border-top: 1px solid #ddd;
+}
+/* 网格中的格子 */
+.b-grid > .b-grid-item{
+    position: relative;
+    /* 每個佔1/3 */
+    flex: 1 1 33%;
+    box-sizing: border-box;
+    /* 撐開成格子 */
+    padding: 1.2rem 0;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+/* 第三列取消右邊框 */
+.b-grid .b-grid-item:nth-child(3n){
+    border-right: none;
+}
+/* grid内容區 */
+.b-grid > .b-grid-item > .b-grid-icon{
+    font-size: 1.5rem;
+    color: #aaa;
+    margin-bottom: .5rem;
+}
+.b-grid > .b-grid-item > .b-grid-label{
+    font-size: .6rem;
+    color: #333;
+}
+/* 不需要边框时取消容器上的border */
+.b-grid.no-border{
+    border: none;
+}
+/* 不需要边框时取消格子上所以的border */
+.b-grid.no-border > .b-grid-item{
+     border: none !important;
+}
+/* 特定列 */
+/* 2 */
+.b-grid.b-grid-2 .b-grid-item{
+    border-right: 1px solid #ddd;
+    flex-basis: 50%;
+    padding: 1.8rem 0;
+}
+.b-grid.b-grid-2 .b-grid-item:nth-child(2n){
+    border-right: none;
+}
+/* 4 */
+.b-grid.b-grid-4 .b-grid-item{
+    border-right: 1px solid #ddd;
+    flex-basis: 25%;
+    padding: .9rem 0;
+}
+.b-grid.b-grid-4 .b-grid-item:nth-child(4n){
+    border-right: none;
+}
+/* 5 */
+.b-grid.b-grid-5 .b-grid-item{
+    border-right: 1px solid #ddd;
+    flex-basis: 20%;
+    padding: .6rem 0;
+}
+.b-grid.b-grid-5 .b-grid-item:nth-child(5n){
+    border-right: none;
+}
+/* 菜單組件 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 菜單 */
+.b-menu > .b-menu-item{
+    display: flex;
+    height: 2.3rem;
+    padding: 0 1rem;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    font-size: .8rem;
+}
+.b-menu > .b-menu-item.point{
+    cursor: pointer;
+}
+/* 名稱 */
+.b-menu > .b-menu-item > .b-menu-name{
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+}
+/* 訊息 */
+.b-menu > .b-menu-item > .b-menu-value{
+    max-width: 5rem;
+    height: 1rem;
+    line-height: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+}
+/* ICON */
+.b-menu > .b-menu-item > .b-menu-icon{
+    margin-left: .3rem;
+    color: #999;
+
+}
+/* 開關 */
+.b-menu > .b-menu-item > .b-switch{
+    position: relative;
+    box-sizing: content-box;
+    width: 2.6rem;
+    height: 1.4rem;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: .75rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: background-color .3s, border .3s;
+    /* 去掉webkit内核里默认的样式 */
+    -webkit-appearance: none;
+    /* 去掉webkit内核里默认的点击效果 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+/* 選中改變顏色 */
+.b-menu > .b-menu-item > .b-switch:checked{
+    border-color: #07C160;
+    background-color: #07C160;
+}
+/* 使用::after偽元素實現圖形按鈕樣式 */
+.b-menu > .b-menu-item > .b-switch::after{
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: .7rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 2px #999;
+    transition: left .3s;
+}
+/* 更改按鈕的位置 */
+.b-menu > .b-menu-item > .b-switch:checked::after{
+    left: 1.2rem;
+}
+/* 模態框组件的樣式 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 模態框 */
+.b-modal{
+    display: none;
+}
+/* 控制模態框的顯示 */
+.b-modal.show{
+    display: block;
+}
+/* 模態框窗口容器 */
+.b-modal .b-modal-wrap{
+    position: absolute;
+    width: 60%;
+    max-width: 480px;
+    top: 45%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #fff;
+    border-radius: .4rem;
+    z-index: 301;
+}
+/* 模態框内容區 */
+.b-modal .b-modal-body{
+    padding: 1.8rem .8rem 1.5rem;
+    text-align: center;
+    font-size: .8rem;
+    line-height: 1.2rem;
+    overflow: hidden;
+}
+/* 模態框尾部 */
+.b-modal .b-modal-footer{
+    display: flex;
+    border-top: 1px solid #ddd;
+}
+/* 模態框尾部里按鈕的样式 */
+.b-modal .b-modal-footer .b-btn{
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    font-size: .8rem;
+    cursor: pointer;
+}
+/* 模態框尾部中的按鈕加上分隔 */
+.b-modal .b-modal-footer .b-btn + .b-btn{
+    border-left: 1px solid #ddd;
+}
+/* 控制模態框内容區的内邊距 */
+.b-modal .b-modal-body.no-padding{
+    padding: 0;
+}
+/* 圖片形式的模態框樣式 */
+.b-modal .b-modal-body .b-modal-img{
+    display: block;
+    width: 100%;
+    border-radius: .3rem;
+}
+/* 純圖片模態框里的關閉按鈕 */
+.b-modal .b-modal-close{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 1.3rem;
+    line-height: 1.3rem;
+    margin: auto;
+    bottom: -3rem;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 100;
+    color: #eee;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* 加載提醒組件 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 頁面加載提示组件 */
+.b-loading{
+    padding: 1rem 0;
+    text-align: center;
+}
+/* 頁面加載提示组件的圖標 */
+.b-loading > .b-loading-icon{
+    font-size: 4.5rem;
+    color: rgba(0, 0, 0, .05);
+}
+/* 頁面加載提示组件的提示信息 */
+.b-loading > .b-loading-info{
+    display: block;
+    margin-top: .6rem;
+    font-size: .8rem;
+    color: #ccc;
+}
+/* 單行加載提示组件 */
+.b-loading-inline{
+    margin: 1.5rem auto 1rem;
+    width: 12.5rem;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    color: #999;
+    height: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+/* 單行加載提示组件的文本信息 */
+.b-loading-inline > .b-loading-info{
+    display: inline-block;
+    padding: 0 .7rem;
+    position: relative;
+    top: -.7rem;
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .7rem;
+    background: #fff;
+}
+/* 單行加載提示组件的圖標 */
+.b-loading-inline > .b-loading-info > .b-loading-icon{
+	padding: 0 .2rem;
+    color: rgba(0, 0, 0, .2);
+}
+/* 垂直方向上震動 */
+.fa-vibrate-y{
+    -webkit-animation: fa-vibrate-y 1.5s infinite ease-in;
+            animation: fa-vibrate-y 1.5s infinite ease-in;
+}
+/* 震動軌跡 */
+@-webkit-keyframes fa-vibrate-y{
+    0% {
+        transform: translateY(-10%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}
+@keyframes fa-vibrate-y{
+    0% {
+        transform: translateY(-10%);
+    }
+    50% {
+        transform: translateY(10%);
+    }
+    100% {
+        transform: translateY(-10%);
+    }
+}
+/* Toast彈出提示組件 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* Toast提示工具 */
+.b-toast{
+    position: fixed;
+    width: 7rem;
+    top: 45%;
+    transform: translateY(-40%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 1rem 0;
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    background: rgba(0, 0, 0, .6);
+    border-radius: .4rem;
+    transition: transform .3s, opacity .3s;
+    z-index: 301;
+}
+/* 顯示Toast組件 */
+.b-toast.show{
+    opacity: 1;
+    transform: translateY(-50%);
+}
+/* Toast組件中的圖標 */
+.b-toast > .b-toast-icon{
+    font-size: 2.2rem;
+}
+/* Toast組件中的文本部分 */
+.b-toast > .b-toast-info{
+    margin-top: .5rem;
+    font-size: .7rem;
+}
+/* actionSheet選單 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 彈出菜單容器，默認隐藏在螢幕的下面 */
+.b-action-sheet > .b-action-sheet-wrap{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 1024px;
+    margin: auto;
+    background: #eee;
+    transition: transform .3s ease;
+    transform: translateY(100%);
+    z-index: 301;
+}
+/* 菜單彈出的时候，改變容器位移 */
+.b-action-sheet.show .b-action-sheet-wrap{
+    transform: translateY(0);
+}
+/* 默認隐藏蒙版 */
+.b-action-sheet > .b-mask{
+    opacity: 0;
+    /* 屏蔽元素的點擊事件 */
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+/* 菜單彈出的时候顯示蒙版 */
+.b-action-sheet.show > .b-mask{
+    opacity: 1;
+    pointer-events: auto;
+}
+/* 彈出菜單頭部 */
+.b-action-sheet .b-action-sheet-header{
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 3rem;
+    background: #fff;
+}
+/* 頭部標題，用來描述菜單作用 */
+.b-action-sheet .b-action-sheet-header > .b-action-sheet-title{
+    flex: 1;
+    font-size: .7rem;
+    line-height: 1rem;
+    font-weight: normal;
+    color: rgba(0, 0, 0, .3);
+    overflow: hidden;
+    display: -webkit-box;
+    /* 超過2良自動截斷 */
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 中間主要内容區 */
+.b-action-sheet .b-action-sheet-body{
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    background: #fff;
+}
+/* 菜單尾部，通常用來 放取消按鈕 */
+.b-action-sheet .b-action-sheet-footer{
+    margin-top: .3rem;
+    background: #fff;
+}
+/* 每个菜單項 */
+.b-action-sheet .b-action-sheet-menu{
+    display: block;
+    height: 2.8rem;
+    line-height: 2.8rem;
+    font-size: .8rem;
+    text-align: center;
+    cursor: pointer;
+}
+/* 菜單項的邊框控制 */
+.b-action-sheet .b-action-sheet-menu + .b-action-sheet-menu{
+    /*display: block;*/
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+/* article文本组件 */
+/*
+ * @Author: 耿映翔
+ * @Date: 2019-09-01 23:02:40 
+ * @Last Modified by: 耿映翔
+ * @Last Modified time: 2019-08-19 13:37:40
+ */
+/* 文章组件 */
+.b-article{
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: .8rem;
+    line-height: 1.6rem;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+/* 文章被折叠的情况 */
+.b-article.fold{
+    max-height: 100%;
+    overflow: hidden;
+}
+/* 展开按钮 */
+.b-article .b-article-unfold-btn{
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5rem;
+    padding-top: 3rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #e0652f;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0, #fff 100%);
+}
+/* 控制展开按钮的显示 */
+.b-article.fold .b-article-unfold-btn{
+    display: block;
+}
+/* 文章大标题 */
+.b-article .b-article-title{
+    margin: .5rem 0 1rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+}
+/* 文章信息，用来放作者、创作时间等 */
+.b-article .b-article-info{
+    font-size: .8rem;
+    color: #aaa;
+}
+/* 文章小标题 */
+.b-article .b-article-subtitle{
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+/* 文章段落 */
+.b-article .b-article-paragraph{
+    margin: .5rem 0 1rem;
+}
+/* 文章图片 */
+.b-article .b-article-img{
+	display: block;
+    max-width: 100%;
+    margin: auto;
+}
